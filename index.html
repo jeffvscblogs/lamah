@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Letter Directory</title>
+  <title>IWantToSaySomething</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -14,55 +14,115 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
+
     .container {
-      text-align: center;
       background-color: white;
       border-radius: 12px;
-      padding: 40px;
-      width: 80%;
+      padding: 30px;
+      width: 90%;
       max-width: 800px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
     }
+
     h1 {
       color: #4c9a2a;
-      font-size: 36px;
+      font-size: 32px;
       margin-bottom: 20px;
     }
+
     .intro-text {
-      font-size: 20px;
+      font-size: 18px;
       color: #555;
       margin-bottom: 30px;
       line-height: 1.6;
+      text-align: center;
+      padding: 0 10px;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
+
     th, td {
-      padding: 15px;
+      padding: 12px;
       text-align: left;
       border-bottom: 1px solid #ddd;
-      font-size: 18px;
+      font-size: 16px;
     }
+
     th {
       background-color: #4c9a2a;
       color: white;
     }
+
     td a {
       color: #4c9a2a;
       text-decoration: none;
       font-weight: bold;
     }
+
     td a:hover {
       text-decoration: underline;
     }
+
     footer {
       font-size: 14px;
       color: #888;
       margin-top: 30px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .intro-text {
+        font-size: 16px;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 10px 8px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      td {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      td:last-child {
+        border-bottom: none;
+      }
     }
   </style>
 </head>
@@ -76,7 +136,7 @@
   </div>
 
   <!-- Letter Directory -->
-  <h1>Letter Directory</h1>
+  <h1>IwantTosaysomething</h1>
   <table>
     <thead>
       <tr>
@@ -93,9 +153,9 @@
         <td><a href="letter02.html">Letter 2: 10th April, 2025</a></td>
         <td>4 minutes</td>
       </tr>
-      <!-- Add more rows for additional letters -->
     </tbody>
   </table>
+
   <footer>Made with love 💚 by Juman for you</footer>
 </div>
 
