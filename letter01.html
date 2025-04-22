@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Want to Say Something - Letter 1</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    .password-container {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 50px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 32px;
+      color: #4c9a2a;
+      margin: 0 0 10px 0;
+    }
+    .reading-time {
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin: 15px 0;
+    }
+    footer {
+      font-size: 14px;
+      color: #888;
+      margin-top: 30px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4c9a2a;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #3b7a21;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+      width: 80%;
+      max-width: 400px;
+    }
+    .error-message {
+      color: red;
+      font-size: 14px;
+    }
+    .hint {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    .submit-btn {
+      padding: 10px 20px;
+      background-color: #4c9a2a;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .submit-btn:hover {
+      background-color: #3b7a21;
+      transform: scale(1.05);
+    }
+    .submit-btn:active {
+      transform: scale(1);
+    }
+    /* Animated Emojis in Background */
+    .emoji-background {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      z-index: -1;
+      pointer-events: none;
+      animation: emojiAnimation 10s infinite linear;
+    }
+    .emoji-background span {
+      font-size: 3rem;
+      animation: emojiMove 10s infinite linear;
+    }
+    @keyframes emojiAnimation {
+      0% { left: -10%; }
+      100% { left: 100%; }
+    }
+    @keyframes emojiMove {
+      0% { transform: translateY(0); }
+      25% { transform: translateY(50px); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-50px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Emoji Background -->
+<div class="emoji-background">
+  <span>🌱</span>
+  <span>💚</span>
+  <span>🌸</span>
+  <span>🌙</span>
+  <span>✨</span>
+</div>
+
+<div class="password-container" id="password-container">
+  <h1>Enter Password to Read the Letter</h1>
+  <input type="password" id="password" placeholder="Enter password..." onkeydown="checkEnter(event)">
+  <button class="submit-btn" onclick="checkPassword()">Submit</button>
+  <p class="hint">Hint: The artist you were recommended to listen to, whose voice I think is unique and soothing.</p>
+  <p class="error-message" id="error-message"></p>
+</div>
+
+<div class="container" id="letter-container">
+  <h1>Letter 1: Why I’m Not Talking to You Directly</h1>
+  <p class="reading-time" id="reading-time"></p>
+
+  <p>Sometimes, silence isn’t distance — it’s love, trying its best not to break something precious. I’ve been quiet, not because I don’t care, but because I care *too much.*</p>
+  <p>We’re both still growing, still learning. I didn’t want our story to be rushed and ruined by immaturity or missteps. So instead of saying too much too soon… I chose to write.</p>
+  <p>You were, are, and always will be someone I carry in my thoughts. These letters are my way of staying close without holding on too tight. You’ll know when the time feels right — and until then, this little space is just for you.</p>
+  <p>— me 🌱</p>
+  <p>also I want to know what you think, basically now i dont have anyone to talk to or am not keeping contact with anyone right now. So just share me what you feel about it. For now mail me, I will be waiting for it :3 </p>
+
+<br>
+<a href="mailto:deepjuman@gmail.com?subject=Important%20Message&body=Hey,%20how%20are%20you?">Send an Email</a>
+
+<br>
+  <a href="index.html" class="back-btn">Back to Letter Directory</a>
+
+  <footer>Made with love 💚 by Juman </footer>
+</div>
+
+<script>
+  function checkPassword() {
+    var password = document.getElementById('password').value;
+    var correctPassword = 'yama'; // Password set here
+
+    if (password === correctPassword) {
+      document.getElementById('letter-container').style.display = 'block';
+      document.getElementById('password-container').style.display = 'none';
+      calculateReadingTime(); // Call the reading time calculation function
+    } else {
+      document.getElementById('error-message').innerText = 'Incorrect password. Please try again.';
+    }
+  }
+
+  function checkEnter(event) {
+    if (event.key === 'Enter') {
+      checkPassword();
+    }
+  }
+
+  function calculateReadingTime() {
+    var letterText = document.getElementById('letter-container').innerText; 
+    var wordCount = letterText.split(/\s+/).length; 
+    var wordsPerMinute = 225; // Average reading speed
+
+    var readingTime = Math.ceil(wordCount / wordsPerMinute); 
+    document.getElementById('reading-time').innerText = 'Approx. ' + readingTime + ' minutes to read';
+  }
+</script>
+
+</body>
+</html>
